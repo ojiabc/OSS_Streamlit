@@ -2,8 +2,8 @@ import streamlit as st
 from openai import OpenAI
 
 st.write("컴퓨터소프트웨어학부 23114563 오재익")
-st.title("Chatbot with OpenAI GPT")
-st.caption("Made by wisdom")
+st.title("💬 Chatbot with OpenAI GPT")
+st.caption("🚀 Made by wisdom")
 
 with st.sidebar:
     st.markdown("[Get an OpenAI API key](http://platform.openai.com/account/api-key)")
@@ -37,6 +37,6 @@ if prompt := st.chat_input("What is up?"):
             stream=True,
         ):
             full_response += (response.choices[0].delta.content or "")
-            message_placeholder.markdown(full_response + "| ")
+            message_placeholder.markdown(full_response + "▌")
         message_placeholder.markdown(full_response)
     st.session_state.messages.append({"role": "assistant", "content": full_response})
