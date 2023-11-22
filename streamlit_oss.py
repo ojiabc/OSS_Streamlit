@@ -1,6 +1,7 @@
 import streamlit as st
-import openai
+from openai import OpenAI
 
+st.write("컴퓨터소프트웨어학부 23114563 오재익")
 st.title("Chatbot with OpenAI GPT")
 st.caption("Made by wisdom")
 
@@ -10,7 +11,7 @@ client = OpenAI(api_key=st.secrets["OPENAI_API_KEY"])
 #st.write(st.secrets["nonexistent_key"])
 
 if "openai_model" not in st.session_state:
-    st.session_state["openai_model"] = "g[t-3.5-turbo]"
+    st.session_state["openai_model"] = "gpt-3.5-turbo"
 
 if "messages" not in st.session_state:
     st.session_state.messages = []
